@@ -1,8 +1,12 @@
 import { browser } from '@wdio/globals'
 
 export default class Page {
-    get getQuotePlusSchedule() {
-        return $('a[class="btn btn-primary ghost"]');
+    get header() {
+        return $('header[aria-label="header"]')
+    }
+
+    get footer() {
+        return $('footer[aria-label="footer"]')
     }
 
     open(path) {

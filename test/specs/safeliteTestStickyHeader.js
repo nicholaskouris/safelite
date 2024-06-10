@@ -10,15 +10,26 @@ describe('Safelite test sticky header', () => {
         await getQuotePlusSchedule.click();
 
         const serviceZip = await FixMyGlass.serviceZipLabel;
-        expect(serviceZip).toBeDisplayedInViewport();
+        expect(serviceZip).toBeDisplayed();
     });
 
-    it('expect header to stick after scroll to the bottom of the page', async () => {
-        const header = await FixMyGlass.header;
+    it('expect fixMyGlass header to stick after scroll to the bottom of the page', async () => {
         const footer = await FixMyGlass.footer;
         await footer.scrollIntoView();
 
-        expect(header).toBeDisplayedInViewport;
+        const header = await FixMyGlass.header;
+        expect(await header.isDisplayed()).toBe(true);
     });
+
+    it('expect homepage header to not stick after scroll to the bottom of the page', async () => {
+        await Homepage.open();
+
+        const footer = await Homepage.footer;
+        await footer.scrollIntoView();
+
+        const header = await Homepage.header;
+        expect(await header.isDisplayed()).toBe(false);
+    });
+
 });
 

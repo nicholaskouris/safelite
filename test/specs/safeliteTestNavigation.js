@@ -15,11 +15,11 @@ describe('Safelite test navigation', () => {
         expect(windshieldRepair).toBeDisplayed;
     });
 
-    it('expert windshield repair subheader to have text', async () => {
+    it('expect windshield repair subheader to have text', async () => {
         const windshieldRepair = await Homepage.windshieldRepair;
         await windshieldRepair.click();
 
         const windshieldRepairHeading4 = await WindshieldRepair.heading4;
-        expect(windshieldRepairHeading4).toHaveText('Safelite’s repair-first mindset')
+        expect(windshieldRepairHeading4).toHaveText('Safelite’s repair-first mindset');
     });
 });
