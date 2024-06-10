@@ -19,7 +19,7 @@ describe('Safelite test navigation', () => {
         const windshieldRepair = await Homepage.windshieldRepair;
         await windshieldRepair.click();
 
-        const windshieldRepairSubHeader = await WindshieldRepair.subHeader;
-        expect(windshieldRepairSubHeader).toHaveText('Safelite’s repair-first mindset')
+        const windshieldRepairHeading4 = await WindshieldRepair.heading4;
+        expect(windshieldRepairHeading4).toHaveText('Safelite’s repair-first mindset')
     });
 });

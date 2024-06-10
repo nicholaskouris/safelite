@@ -1,13 +1,13 @@
 import { browser } from '@wdio/globals'
 
 export default class Page {
-    get getQuotePlusSchedule () {
+    get getQuotePlusSchedule() {
         return $('a[class="btn btn-primary ghost"]');
     }
 
-    open (path) {
-        path = path ? `/${path}` : '';
+    open(path) {
+        const slashAndPath = path ? `/${path}` : '';
 
-        return browser.url(`https://www.safelite.com${path}`)
+        return browser.url(`https://www.safelite.com${slashAndPath}`)
     }
 }
